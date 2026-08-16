@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="mainController" class="dasturlash.uz.controller.MainController">
+        <property name="initService" ref="initService"/>
+        <property name="bookService" ref="bookService"/>
+        <property name="authService" ref="authService"/>
+        <property name="categoryService" ref="categoryService"/>
+        <property name="componentContainer" ref="componentContainer"/>
+        <property name="scannerService" ref="scannerService"/>
+    </bean>
+
+    <bean name="adminController" class="dasturlash.uz.controller.AdminController">
+        <property name="bookController" ref="bookController"/>
+        <property name="categoryController" ref="categoryController"/>
+        <property name="studentProfileController" ref="studentProfileController"/>
+        <property name="profileController" ref="profileController"/>
+        <property name="scannerService" ref="scannerService"/>
+    </bean>
+
+    <bean name="bookController" class="dasturlash.uz.controller.BookController">
+        <property name="studentBookService" ref="studentBookService"/>
+        <property name="bookService" ref="bookService"/>
+        <property name="componentContainer" ref="componentContainer"/>
+        <property name="scannerService" ref="scannerService"/>
+    </bean>
+
+    <bean name="categoryController" class="dasturlash.uz.controller.CategoryController">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="componentContainer" ref="componentContainer"/>
+        <property name="scannerService" ref="scannerService"/>
+    </bean>
+
+    <bean name="profileController" class="dasturlash.uz.controller.ProfileController">
+        <property name="profileService" ref="profileService"/>
+        <property name="componentContainer" ref="componentContainer"/>
+        <property name="scannerService" ref="scannerService"/>
+    </bean>
+
+    <bean name="staffController" class="dasturlash.uz.controller.StaffController">
+        <property name="bookController" ref="bookController"/>
+        <property name="studentProfileController" ref="studentProfileController"/>
+        <property name="scannerService" ref="scannerService"/>
+
+    </bean>
+
+    <bean name="studentController" class="dasturlash.uz.controller.StudentController">
+        <property name="studentBookService" ref="studentBookService"/>
+        <property name="bookService" ref="bookService"/>
+        <property name="componentContainer" ref="componentContainer"/>
+        <property name="scannerService" ref="scannerService"/>
+    </bean>
+
+    <bean name="studentProfileController" class="dasturlash.uz.controller.StudentProfileController">
+        <property name="profileService" ref="profileService"/>
+        <property name="componentContainer" ref="componentContainer"/>
+        <property name="scannerService" ref="scannerService"/>
+    </bean>
+
+
+    <bean name="initService" class="dasturlash.uz.service.InitService" >
+        <property name="profileRepository" ref="profileRepository"/>
+    </bean>
+
+    <bean name="bookService" class="dasturlash.uz.service.BookService">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="categoryRepository" ref="categoryRepository"/>
+        <property name="bookRepository" ref="bookRepository"/>
+    </bean>
+
+    <bean name="authService" class="dasturlash.uz.service.AuthService">
+        <property name="profileRepository" ref="profileRepository"/>
+        <property name="studentController" ref="studentController"/>
+        <property name="adminController" ref="adminController"/>
+        <property name="staffController" ref="staffController"/>
+        <property name="componentContainer" ref="componentContainer"/>
+    </bean>
+
+    <bean name="categoryService" class="dasturlash.uz.service.CategoryService">
+        <property name="categoryRepository" ref="categoryRepository"/>
+    </bean>
+
+    <bean name="profileService" class="dasturlash.uz.service.ProfileService">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="profileRepository" ref="profileRepository"/>
+    </bean>
+
+    <bean name="studentBookService" class="dasturlash.uz.service.StudentBookService">
+        <property name="bookRepository" ref="bookRepository"/>
+        <property name="studentBookRepository" ref="studentBookRepository"/>
+        <property name="componentContainer" ref="componentContainer"/>
+    </bean>
+
+
+    <bean name="bookRepository" class="dasturlash.uz.repository.BookRepository">
+        <property name="categoryRepository" ref="categoryRepository"/>
+    </bean>
+
+
+
+    <bean name="profileRepository" class="dasturlash.uz.repository.ProfileRepository"/>
+    <bean name="categoryRepository" class="dasturlash.uz.repository.CategoryRepository"/>
+
+
+    <bean name="studentBookRepository"  class="dasturlash.uz.repository.StudentBookRepository" >
+        <property name="bookRepository" ref="bookRepository"/>
+        <property name="profileRepository" ref="profileRepository"/>
+    </bean>
+
+    <bean name="componentContainer" class="dasturlash.uz.container.ComponentContainer">
+
+    </bean>
+
+    <bean name="scannerService" class="dasturlash.uz.service.ScannerService">
+        <property name="componentContainer" ref="componentContainer"/>
+    </bean>
+
+
+</beans>
