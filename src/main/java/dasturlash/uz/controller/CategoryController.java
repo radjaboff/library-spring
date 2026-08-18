@@ -6,8 +6,9 @@ import dasturlash.uz.service.CategoryService;
 import dasturlash.uz.service.ScannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;

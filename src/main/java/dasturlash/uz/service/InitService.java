@@ -7,11 +7,12 @@ import dasturlash.uz.enums.ProfileStatus;
 import dasturlash.uz.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
-@Component
+@Service
 public class InitService {
     @Autowired
     ProfileRepository profileRepository;

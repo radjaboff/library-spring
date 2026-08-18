@@ -3,8 +3,9 @@ package dasturlash.uz.controller;
 import dasturlash.uz.service.ScannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class StaffController {
     @Autowired
     private BookController bookController;

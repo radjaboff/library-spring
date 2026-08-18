@@ -5,6 +5,7 @@ import dasturlash.uz.dto.Book;
 import dasturlash.uz.dto.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.awt.*;
 import java.io.FileWriter;
@@ -18,7 +19,7 @@ import java.util.ArrayList;;
 import java.util.List;
 import java.util.stream.Stream;
 
-@Component
+@Repository
 public class BookRepository {
     @Autowired
     private CategoryRepository categoryRepository;

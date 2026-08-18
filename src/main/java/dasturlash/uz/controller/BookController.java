@@ -7,8 +7,10 @@ import dasturlash.uz.service.StudentBookService;
 import dasturlash.uz.service.ScannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+
 import java.time.LocalDate;
-@Component
+@Controller
 public class BookController {
     @Autowired
     private StudentBookService studentBookService;
