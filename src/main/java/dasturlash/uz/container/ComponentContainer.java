@@ -2,8 +2,10 @@ package dasturlash.uz.container;
 
 
 import dasturlash.uz.dto.Profile;
-import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
+import java.util.Scanner;
+@Component
 public class ComponentContainer {
     private   Scanner scannerText;
     private   Scanner scannerNumber;

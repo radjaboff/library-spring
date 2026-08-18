@@ -4,14 +4,23 @@ import dasturlash.uz.container.ComponentContainer;
 import dasturlash.uz.dto.Profile;
 import dasturlash.uz.service.*;
 import dasturlash.uz.service.ScannerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MainController {
     // lesson finished
+    @Autowired
    private InitService initService;
+    @Autowired
    private BookService bookService;
+    @Autowired
    private AuthService authService;
+    @Autowired
    private CategoryService categoryService;
+    @Autowired
    private  ComponentContainer componentContainer;
+    @Autowired
    private ScannerService scannerService;
 
 
@@ -111,30 +120,5 @@ public class MainController {
         System.out.print("Enter category id:");
         Integer categoryId = componentContainer.getScannerNumber().nextInt();
         bookService.byCategoryId(categoryId);
-    }
-
-
-    public void setInitService(InitService initService) {
-        this.initService = initService;
-    }
-
-    public void setBookService(BookService bookService) {
-        this.bookService = bookService;
-    }
-
-    public void setAuthService(AuthService authService) {
-        this.authService = authService;
-    }
-
-    public void setCategoryService(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
-
-    public void setComponentContainer(ComponentContainer componentContainer) {
-        this.componentContainer = componentContainer;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
     }
 }

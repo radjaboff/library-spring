@@ -5,11 +5,16 @@ import dasturlash.uz.enums.ProfileRole;
 import dasturlash.uz.enums.ProfileStatus;
 import dasturlash.uz.service.ProfileService;
 import dasturlash.uz.service.ScannerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StudentProfileController {
-
+    @Autowired
     private ProfileService profileService;
+    @Autowired
     private ComponentContainer componentContainer;
+    @Autowired
     private ScannerService scannerService;
 
 
@@ -69,16 +74,4 @@ public class StudentProfileController {
         profileService.changeStudentStatus(id, ProfileStatus.ACTIVE);
     }
 
-
-    public void setProfileService(ProfileService profileService) {
-        this.profileService = profileService;
-    }
-
-    public void setComponentContainer(ComponentContainer componentContainer) {
-        this.componentContainer = componentContainer;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
-    }
 }

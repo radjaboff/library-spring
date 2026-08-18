@@ -1,12 +1,15 @@
 package dasturlash.uz.service;
 
 import dasturlash.uz.container.ComponentContainer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+@Component
 public class ScannerService {
-
+    @Autowired
     private ComponentContainer componentContainer;
 
     public  int getAction() {
@@ -18,9 +21,5 @@ public class ScannerService {
             System.out.println("\nPlease enter number.\n");
             return -1;
         }
-    }
-
-    public void setComponentContainer(ComponentContainer componentContainer) {
-        this.componentContainer = componentContainer;
     }
 }

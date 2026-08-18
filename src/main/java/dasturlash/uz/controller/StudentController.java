@@ -4,12 +4,18 @@ import dasturlash.uz.container.ComponentContainer;
 import dasturlash.uz.service.BookService;
 import dasturlash.uz.service.StudentBookService;
 import dasturlash.uz.service.ScannerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StudentController {
-
+    @Autowired
     private StudentBookService studentBookService;
+    @Autowired
     private BookService bookService;
+    @Autowired
     private ComponentContainer componentContainer;
+    @Autowired
     private ScannerService scannerService;
 
 
@@ -80,19 +86,5 @@ public class StudentController {
         studentBookService.returnBook(bId);
     }
 
-    public void setStudentBookService(StudentBookService studentBookService) {
-        this.studentBookService = studentBookService;
-    }
 
-    public void setBookService(BookService bookService) {
-        this.bookService = bookService;
-    }
-
-    public void setComponentContainer(ComponentContainer componentContainer) {
-        this.componentContainer = componentContainer;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
-    }
 }

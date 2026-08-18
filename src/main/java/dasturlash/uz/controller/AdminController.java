@@ -2,14 +2,21 @@ package dasturlash.uz.controller;
 
 
 import dasturlash.uz.service.ScannerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AdminController {
 
-
+    @Autowired
     private BookController bookController;
+    @Autowired
     private CategoryController categoryController;
+    @Autowired
     private StudentProfileController studentProfileController;
+    @Autowired
     private ProfileController profileController;
+    @Autowired
     private ScannerService scannerService;
 
 
@@ -50,25 +57,5 @@ public class AdminController {
         System.out.println("3. Student");
         System.out.println("4. Profile");
         System.out.println("0. Exit");
-    }
-
-    public void setBookController(BookController bookController) {
-        this.bookController = bookController;
-    }
-
-    public void setCategoryController(CategoryController categoryController) {
-        this.categoryController = categoryController;
-    }
-
-    public void setStudentProfileController(StudentProfileController studentProfileController) {
-        this.studentProfileController = studentProfileController;
-    }
-
-    public void setProfileController(ProfileController profileController) {
-        this.profileController = profileController;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
     }
 }

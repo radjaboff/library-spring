@@ -6,6 +6,8 @@ import dasturlash.uz.dto.Category;
 import dasturlash.uz.dto.Profile;
 import dasturlash.uz.dto.StudentBook;
 import dasturlash.uz.enums.StudentBookStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,10 +19,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Stream;
-
+@Component
 public class StudentBookRepository {
-
+    @Autowired
     private BookRepository bookRepository;
+    @Autowired
     private ProfileRepository profileRepository;
 
 
@@ -242,11 +245,4 @@ public class StudentBookRepository {
     }
 
 
-    public void setBookRepository(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
-
-    public void setProfileRepository(ProfileRepository profileRepository) {
-        this.profileRepository = profileRepository;
-    }
 }

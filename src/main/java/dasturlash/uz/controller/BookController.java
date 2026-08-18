@@ -5,13 +5,18 @@ import dasturlash.uz.dto.Book;
 import dasturlash.uz.service.BookService;
 import dasturlash.uz.service.StudentBookService;
 import dasturlash.uz.service.ScannerService;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import java.time.LocalDate;
-
+@Component
 public class BookController {
+    @Autowired
     private StudentBookService studentBookService;
+    @Autowired
     private BookService bookService;
+    @Autowired
     private ComponentContainer componentContainer;
+    @Autowired
     private ScannerService scannerService;
 
     public void start() {
@@ -113,19 +118,4 @@ public class BookController {
         studentBookService.bookHistory(bookId);
     }
 
-    public void setStudentBookService(StudentBookService studentBookService) {
-        this.studentBookService = studentBookService;
-    }
-
-    public void setBookService(BookService bookService) {
-        this.bookService = bookService;
-    }
-
-    public void setComponentContainer(ComponentContainer componentContainer) {
-        this.componentContainer = componentContainer;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
-    }
 }

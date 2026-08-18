@@ -8,16 +8,20 @@ import dasturlash.uz.dto.StudentBook;
 import dasturlash.uz.enums.StudentBookStatus;
 import dasturlash.uz.repository.BookRepository;
 import dasturlash.uz.repository.StudentBookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Component
 public class StudentBookService {
 
-
+    @Autowired
     private BookRepository bookRepository;
+    @Autowired
     private StudentBookRepository studentBookRepository;
+    @Autowired
     private ComponentContainer componentContainer;
 
     public void takeBook(Integer bId) {
@@ -139,15 +143,4 @@ public class StudentBookService {
     }
 
 
-    public void setBookRepository(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
-
-    public void setStudentBookRepository(StudentBookRepository studentBookRepository) {
-        this.studentBookRepository = studentBookRepository;
-    }
-
-    public void setComponentContainer(ComponentContainer componentContainer) {
-        this.componentContainer = componentContainer;
-    }
 }

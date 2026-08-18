@@ -4,11 +4,16 @@ import dasturlash.uz.container.ComponentContainer;
 import dasturlash.uz.dto.Category;
 import dasturlash.uz.service.CategoryService;
 import dasturlash.uz.service.ScannerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CategoryController {
-
+    @Autowired
     private CategoryService categoryService;
+    @Autowired
     private ComponentContainer componentContainer;
+    @Autowired
     private ScannerService scannerService;
 
     public void start() {
@@ -62,15 +67,4 @@ public class CategoryController {
         categoryService.delete(id);
     }
 
-    public void setCategoryService(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
-
-    public void setComponentContainer(ComponentContainer componentContainer) {
-        this.componentContainer = componentContainer;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
-    }
 }
